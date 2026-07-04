@@ -1,82 +1,82 @@
 
-# Advanced Customer Churn Classification Pipeline
+# Pipeline de Classificação de Churn de Clientes
 
-End-to-end machine learning pipeline for customer churn prediction in a telecom context.
+Pipeline de machine learning de ponta a ponta para previsão de churn de clientes em um contexto de telecomunicações.
 
-This project is developed through multiple stages, simulating a real-world machine learning workflow:
+Este projeto é desenvolvido em múltiplas etapas, simulando um fluxo real de trabalho em machine learning:
 
-- Baseline ensemble models
-- Gradient Boosting with XGBoost
-- Semi-supervised learning (Self Training)
-- Model comparison and performance analysis
+- Modelos base com ensemble learning
+- Gradiente Boosting com XGBoost
+- Aprendizado semi-supervisionado (Self Training)
+- Comparação de modelos e análise de performance
 
-The main goal is to build a reproducible and scalable ML pipeline that evolves incrementally, improving both technical depth and modeling performance.
+O objetivo principal é construir um pipeline de ML reproduzível e escalável, evoluindo de forma incremental e melhorando continuamente a profundidade técnica e a performance dos modelos.
 
 ---
 
-## 🎯 Problem Definition
+## 🎯 Definição do Problema
 
-Customer churn is one of the most critical challenges in subscription-based businesses, especially in the telecom sector. Retaining existing customers is significantly more cost-effective than acquiring new ones.
+O churn de clientes é um dos desafios mais críticos em empresas baseadas em assinatura, especialmente no setor de telecomunicações. Reter clientes existentes é significativamente mais barato do que adquirir novos.
 
-This project aims to develop a predictive model capable of identifying customers with a high probability of churn, enabling proactive retention strategies and data-driven decision making.
+Este projeto tem como objetivo desenvolver um modelo preditivo capaz de identificar clientes com alta probabilidade de churn, permitindo estratégias proativas de retenção e tomada de decisão orientada por dados.
 
 ---
 
 ## 📊 Dataset
 
-- Telco Customer Churn Dataset
-- Binary classification problem:
-  - 0 → Customer stays
-  - 1 → Customer churns
+- Dataset Telco Customer Churn
+- Problema de classificação binária:
+  - 0 → Cliente permanece
+  - 1 → Cliente cancela (churn)
 
 ---
 
-## ⚙️ Project Pipeline
+## ⚙️ Pipeline do Projeto
 
-### 1. Data Processing
-- Removal of irrelevant features (e.g., customerID)
-- Handling categorical variables using one-hot encoding
-- Train/test split with stratification
+### 1. Processamento de Dados
+- Remoção de variáveis irrelevantes (ex: customerID)
+- Tratamento de variáveis categóricas com one-hot encoding
+- Divisão treino/teste com estratificação
 
-### 2. Baseline Models (Ensemble Learning)
-- Logistic Regression
-- Decision Tree
+### 2. Modelos Base (Ensemble Learning)
+- Regressão Logística
+- Árvore de Decisão
 - Random Forest
-- Model comparison using accuracy and classification metrics
+- Comparação de modelos usando acurácia e métricas de classificação
 
-### 3. Gradient Boosting (XGBoost)
-- Implementation of XGBoost classifier
-- Integration into preprocessing pipeline
-- Performance comparison against baseline models
+### 3. Gradiente Boosting (XGBoost)
+- Implementação do classificador XGBoost
+- Integração ao pipeline de pré-processamento
+- Comparação de performance com modelos base
 
-### 4. Semi-Supervised Learning
-- Simulation of unlabeled data
-- Self Training (Pseudo Labeling)
-- Iterative label propagation process
-- Evaluation against supervised models
-
----
-
-## 📈 Results Summary
-
-The best performing model in this project was:
-
-- 🏆 XGBoost Pipeline (~0.799 accuracy)
-
-Semi-supervised learning (Self Training) showed competitive performance but did not outperform the supervised XGBoost model, highlighting that results depend heavily on data distribution and label quality.
+### 4. Aprendizado Semi-Supervisionado
+- Simulação de dados não rotulados
+- Self Training (pseudo rotulagem)
+- Processo iterativo de propagação de rótulos
+- Avaliação comparativa com modelos supervisionados
 
 ---
 
-## 🧠 Key Learnings
+## 📈 Resumo de Resultados
 
-- Ensemble methods significantly improve baseline performance
-- XGBoost is highly effective for structured tabular data
-- Semi-supervised learning is powerful but sensitive to data quality and assumptions
-- A well-designed ML pipeline improves reproducibility and scalability
+O melhor modelo neste projeto foi:
+
+- 🏆 Pipeline com XGBoost (~0.799 de acurácia)
+
+O aprendizado semi-supervisionado (Self Training) apresentou desempenho competitivo, mas não superou o modelo supervisionado com XGBoost, destacando que sua eficácia depende fortemente da distribuição dos dados e da qualidade dos rótulos.
 
 ---
 
-## 🛠️ Technologies Used
+## 🧠 Principais Aprendizados
+
+- Métodos de ensemble melhoram significativamente a performance base
+- XGBoost é altamente eficaz para dados tabulares estruturados
+- Aprendizado semi-supervisionado é poderoso, mas sensível à qualidade dos dados e suposições
+- Um pipeline bem estruturado melhora a reprodutibilidade e escalabilidade
+
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 - Python
 - Pandas
@@ -87,7 +87,7 @@ Semi-supervised learning (Self Training) showed competitive performance but did 
 
 ---
 
-## 📁 Repository Structure
+## 📁 Estrutura do Repositório
 
 ```text
 advanced-classification-ml/
@@ -106,10 +106,9 @@ advanced-classification-ml/
 ├── .gitignore
 └── README.md
 
-
 ---
 
-## 🚀 How to Run
+## 🚀 Como Executar
 
 git clone https://github.com/Vagnerkrg/advanced-classification-ml.git
 
@@ -127,33 +126,34 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Execution Flow
+## ▶️ Fluxo de Execução
 
-Run the main notebook:
+Executar o notebook principal:
 
 01_baseline_classification.ipynb
 
-This notebook contains the full machine learning pipeline:
-- data preprocessing
-- baseline models
+Este notebook contém o pipeline completo de machine learning:
+
+- processamento de dados
+- modelos base
 - ensemble learning
 - XGBoost pipeline
-- semi-supervised learning
+- aprendizado semi-supervisionado
 
 ---
 
-## 📌 Next Steps
+## 📌 Próximos Passos
 
-- Hyperparameter tuning (GridSearch / RandomSearch)
-- Feature importance analysis
-- Refinement of semi-supervised learning approach
-- Refactoring into modular src/ structure
-- Improved documentation and visualization
+- Otimização de hiperparâmetros (GridSearch / RandomSearch)
+- Análise de importância de variáveis
+- Refinamento da abordagem semi-supervisionada
+- Refatoração para estrutura modular em src/
+- Melhoria da documentação com visualizações e insights
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Autor
 
 Vagner Ferreira  
-Data Scientist | Machine Learning | Data Engineering  
-Focused on building end-to-end AI solutions applied to real-world problems
+Cientista de Dados | Machine Learning | Engenharia de Dados  
+Focado na construção de soluções de IA de ponta a ponta aplicadas a problemas reais
