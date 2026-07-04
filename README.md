@@ -1,93 +1,94 @@
-# 📊 Advanced Classification ML
 
-Projeto de Machine Learning aplicado à previsão de churn de clientes (Customer Churn Prediction), utilizando diferentes abordagens de classificação e evolução progressiva de modelos.
+# Advanced Customer Churn Classification Pipeline
 
----
+End-to-end supervised learning pipeline for customer churn prediction.
 
-## 🎯 Problema de Negócio
+This project is developed through multiple stages:
 
-Empresas de telecomunicações enfrentam altos custos relacionados à perda de clientes (churn).
+- Ensemble models (baseline)
+- XGBoost pipeline optimization
+- Semi-supervised learning (Self Training)
+- Model comparison and performance analysis
 
-O objetivo deste projeto é prever quais clientes têm maior probabilidade de cancelar o serviço, permitindo ações preventivas de retenção e redução de churn.
-
----
-
-## 🧠 Objetivo do Projeto
-
-Construir um pipeline completo de Machine Learning para classificação de churn, comparando diferentes abordagens:
-
-- Modelos tradicionais de Machine Learning
-- Métodos ensemble
-- Boosting com XGBoost
-- Abordagem semi-supervisionada
-
-O projeto é desenvolvido de forma incremental, simulando evolução de um sistema real em produção.
+Goal: simulate a real-world machine learning workflow with incremental improvements and a reproducible pipeline structure.
 
 ---
 
-## 📁 Dataset
+## 🎯 Problem Definition
+
+Customer churn is a critical problem for subscription-based companies, especially in the telecom sector. Retaining customers is significantly more cost-effective than acquiring new ones.
+
+This project aims to build a predictive model capable of identifying customers with a high probability of churn, enabling proactive retention strategies.
+
+---
+
+## 📊 Dataset
 
 - Telco Customer Churn Dataset
-- Problema: classificação binária
-- Target:
-  - 0 → Cliente permanece
-  - 1 → Cliente cancela serviço
+- Binary classification problem:
+  - 0 → Customer stays
+  - 1 → Customer churns
 
 ---
 
-## ⚙️ Pipeline do Projeto
+## ⚙️ Project Pipeline
 
-✔ Carregamento e exploração inicial dos dados  
-✔ Limpeza e pré-processamento  
-✔ Encoding de variáveis categóricas  
-✔ Separação treino/teste estratificada  
-✔ Treinamento de múltiplos modelos:
-  - Logistic Regression
-  - Decision Tree
-  - Random Forest  
-✔ Implementação de pipeline com XGBoost  
-✔ Avaliação de desempenho com métricas de classificação  
-✔ Comparação entre modelos  
+### 1. Data Processing
+- Removal of irrelevant features (e.g., customerID)
+- Handling categorical variables using one-hot encoding
+- Train/test split with stratification
 
----
+### 2. Baseline Models (Ensemble Learning)
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Model comparison using accuracy and classification metrics
 
-## 📊 Avaliação dos Modelos
+### 3. Gradient Boosting (XGBoost)
+- Implementation of XGBoost classifier
+- Integration into preprocessing pipeline
+- Performance comparison against baseline models
 
-Os modelos foram avaliados com:
-
-- Accuracy
-- Precision
-- Recall
-- F1-score
-
-### 🏆 Melhor resultado atual:
-- XGBoost (~0.799 accuracy)
+### 4. Semi-Supervised Learning
+- Simulation of unlabeled data
+- Self Training (Pseudo Labeling)
+- Iterative label propagation process
+- Evaluation against supervised models
 
 ---
 
-## 🚀 Evolução do Projeto
+## 📈 Results Summary
 
-- 🔹 Baseline de modelos tradicionais
-- 🔹 Ensemble Learning (Random Forest)
-- 🔹 Boosting com XGBoost
-- 🔜 Semi-supervised learning (em desenvolvimento)
+The best performing model in this project was:
+
+- 🏆 XGBoost Pipeline (~0.799 accuracy)
+
+Semi-supervised learning (Self Training) was evaluated but did not outperform the supervised XGBoost model, highlighting that its effectiveness depends on data distribution and labeling quality.
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+## 🧠 Key Learnings
+
+- Ensemble methods significantly improve baseline performance
+- XGBoost provides strong performance for structured tabular data
+- Semi-supervised learning can be useful but is highly dependent on data quality
+- Proper pipeline design is critical for reproducibility and scalability
+
+---
+
+## 🛠️ Technologies Used
 
 - Python
 - Pandas
 - NumPy
-- Scikit-Learn
+- Scikit-learn
 - XGBoost
 - Jupyter Notebook
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Repository Structure
 
-```text
 advanced-classification-ml/
 │
 ├── data/
@@ -95,9 +96,7 @@ advanced-classification-ml/
 │   └── processed/
 │
 ├── notebooks/
-│   ├── 01_baseline_classification.ipynb
-│   ├── 02_xgboost_pipeline.ipynb
-│   └── 03_semi_supervised.ipynb
+│   └── 01_baseline_classification.ipynb
 │
 ├── src/
 ├── models/
@@ -105,38 +104,24 @@ advanced-classification-ml/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-```
-
 ---
 
-## 📌 Como executar o projeto
+## 🚀 How to Run
 
-### Clone o repositório
 ```bash
 git clone https://github.com/Vagnerkrg/advanced-classification-ml.git
-```
 
-### Crie o ambiente virtual
-```bash
+cd advanced-classification-ml
+
 python -m venv .venv
-```
 
-### Ative o ambiente
-
-**Windows**
-```bash
+# Windows
 .venv\Scripts\activate
-```
 
-**Mac/Linux**
-```bash
+# Mac/Linux
 source .venv/bin/activate
-```
 
-### Instale dependências
-```bash
 pip install -r requirements.txt
-```
 
 ### Execute os notebooks
 ```text
