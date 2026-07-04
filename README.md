@@ -1,24 +1,24 @@
 
 # Advanced Customer Churn Classification Pipeline
 
-End-to-end supervised learning pipeline for customer churn prediction.
+End-to-end machine learning pipeline for customer churn prediction in a telecom context.
 
-This project is developed through multiple stages:
+This project is developed through multiple stages, simulating a real-world machine learning workflow:
 
-- Ensemble models (baseline)
-- XGBoost pipeline optimization
+- Baseline ensemble models
+- Gradient Boosting with XGBoost
 - Semi-supervised learning (Self Training)
 - Model comparison and performance analysis
 
-Goal: simulate a real-world machine learning workflow with incremental improvements and a reproducible pipeline structure.
+The main goal is to build a reproducible and scalable ML pipeline that evolves incrementally, improving both technical depth and modeling performance.
 
 ---
 
 ## 🎯 Problem Definition
 
-Customer churn is a critical problem for subscription-based companies, especially in the telecom sector. Retaining customers is significantly more cost-effective than acquiring new ones.
+Customer churn is one of the most critical challenges in subscription-based businesses, especially in the telecom sector. Retaining existing customers is significantly more cost-effective than acquiring new ones.
 
-This project aims to build a predictive model capable of identifying customers with a high probability of churn, enabling proactive retention strategies.
+This project aims to develop a predictive model capable of identifying customers with a high probability of churn, enabling proactive retention strategies and data-driven decision making.
 
 ---
 
@@ -63,16 +63,16 @@ The best performing model in this project was:
 
 - 🏆 XGBoost Pipeline (~0.799 accuracy)
 
-Semi-supervised learning (Self Training) was evaluated but did not outperform the supervised XGBoost model, highlighting that its effectiveness depends on data distribution and labeling quality.
+Semi-supervised learning (Self Training) showed competitive performance but did not outperform the supervised XGBoost model, highlighting that results depend heavily on data distribution and label quality.
 
 ---
 
 ## 🧠 Key Learnings
 
 - Ensemble methods significantly improve baseline performance
-- XGBoost provides strong performance for structured tabular data
-- Semi-supervised learning can be useful but is highly dependent on data quality
-- Proper pipeline design is critical for reproducibility and scalability
+- XGBoost is highly effective for structured tabular data
+- Semi-supervised learning is powerful but sensitive to data quality and assumptions
+- A well-designed ML pipeline improves reproducibility and scalability
 
 ---
 
@@ -89,6 +89,7 @@ Semi-supervised learning (Self Training) was evaluated but did not outperform th
 
 ## 📁 Repository Structure
 
+```text
 advanced-classification-ml/
 │
 ├── data/
@@ -104,47 +105,55 @@ advanced-classification-ml/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+
+
 ---
 
 ## 🚀 How to Run
 
-```bash
 git clone https://github.com/Vagnerkrg/advanced-classification-ml.git
 
 cd advanced-classification-ml
 
 python -m venv .venv
 
-# Windows
+Windows:
 .venv\Scripts\activate
 
-# Mac/Linux
+Mac/Linux:
 source .venv/bin/activate
 
 pip install -r requirements.txt
 
-### Execute os notebooks
-```text
-01 → baseline
-02 → xgboost
-03 → semi-supervisionado
-```
+---
+
+## ▶️ Execution Flow
+
+Run the main notebook:
+
+01_baseline_classification.ipynb
+
+This notebook contains the full machine learning pipeline:
+- data preprocessing
+- baseline models
+- ensemble learning
+- XGBoost pipeline
+- semi-supervised learning
 
 ---
 
-## 📌 Próximos passos
+## 📌 Next Steps
 
-- Otimização de hiperparâmetros (GridSearch / RandomSearch)
+- Hyperparameter tuning (GridSearch / RandomSearch)
 - Feature importance analysis
-- Implementação completa do semi-supervisionado
-- Refatoração para módulos em `src/`
-- README com visualizações e gráficos
+- Refinement of semi-supervised learning approach
+- Refactoring into modular src/ structure
+- Improved documentation and visualization
 
 ---
 
-## 📌 Autor
+## 👨‍💻 Author
 
-**Vagner Ferreira**
-
+Vagner Ferreira  
 Data Scientist | Machine Learning | Data Engineering  
-Foco em construção de soluções de IA aplicadas a problemas reais 
+Focused on building end-to-end AI solutions applied to real-world problems
